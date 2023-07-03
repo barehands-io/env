@@ -53,6 +53,8 @@ const env = LoadEnv('path/to/local.env', {
 });
 
 console.log(env);
+
+export default env;
 ```
 ##### Result:
 ```sh
@@ -101,7 +103,7 @@ const env = Env('path/to/local.env', {
     // optional envs
     API_KEY: Env.optional.string()
 });
-
+export default env;
 // `env` will be typed and validated.
 ```
 
@@ -128,6 +130,7 @@ const env = Env('path/to/local.env', {
 }, {required})
 
 console.log(env);
+export default env;
 ```
 This will check if `API_KEY` exists only if `CONNECT_TO_API` is true.
 You can add as many functions as you want. The loader will run all of them and add returned values to the `required` array.
